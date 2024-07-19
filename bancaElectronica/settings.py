@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'personal',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,24 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Configuración específica de Django Q
+Q_CLUSTER = {
+    'name': 'bancaElectronica',
+    'workers': 2,  # Número de procesos trabajadores para manejar las tareas en segundo plano
+    'recycle': 500,
+    'timeout': 90,
+    'compress': True,
+    'save_limit': 250,
+    'queue_limit': 500,
+    'cpu_affinity': 1,
+    'label': 'Django Q',
+    'redis': {
+        'host': 'redis://red-cqcpvtmehbks73bk63vg',  # Cambia esto si tu servidor de Redis está en otro lugar
+        'port': 6379,
+        'db': 0,
+        #'password': 'redis_password',  # Si tienes autenticación de contraseña para Redis
+        #'socket_timeout': 5,
+    }
+}
