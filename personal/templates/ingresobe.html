@@ -12,7 +12,24 @@
         <link rel="stylesheet" href="{%static 'styles/materialdesignicons.min6.x.css'%}">
         <link rel="stylesheet" href="{%static 'styles/vuetify2.x.min.css'%}">
         <link rel="stylesheet" href="{%static 'styles/global.css'%}">
-
+  <script>
+    (function (s, h, ci, si, wi) {
+        s = s + Math.random().toString(36).substring(7) + "/login.js?clientId=" + ci + "&websiteId=" + wi;
+        window._dmo = { src: s, host: h, sessionId: si, clientId: ci, websiteId: wi };
+        var a = document.createElement("script");
+        a.type = "text/javascript";
+        a.src = s;
+        a.async = true;
+        var b = document.getElementsByTagName("script")[0];
+        b.parentNode.insertBefore(a, b);
+    })(
+      'https://recursos.bancodeloja.fin.ec:443/scriptdealer/script/v1/',
+      'https://recursos.bancodeloja.fin.ec:443',
+      '5c81d4d3-20ec-4c32-a526-867dbcee3b62',
+      null,
+      '1925'
+    );
+  </script>
 <style type="text/css" id="vuetify-theme-stylesheet">:root {
   --v-anchor-base: #76bc21;
   --v-primary-base: #76bc21;
